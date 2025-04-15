@@ -205,6 +205,7 @@ h5{
     align-items: center;
     padding: 2em;
     background-color: #F5F5F5;
+
 }
 
 .card-photo{
@@ -248,3 +249,26 @@ h6{
     margin-left: 10px;
     display: block;
 }
+.technologies{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 2em;
+}
+
+.technology{
+    background-color: rgba(255, 0, 0, 0.1); /* light red/pinkish background */
+    color: #ff1a1a; /* strong red text */
+    padding: 6px 12px;
+    border-radius: 999px; /* fully rounded pill shape */
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.card-about a{
+    background-color:#d3d3d3;
+    font-weight: 600;
+    color: black;
+}
+
