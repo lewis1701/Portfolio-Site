@@ -629,3 +629,25 @@ h6 { /* Used for Card Titles */
     opacity: 1;
     transform: translateX(0);
   }
+
+  .footerbuttons{
+    margin: 2em;
+  }
+
+  #contact{
+    display:flex;
+    flex-direction: column;
+    background-color: #e0e0e0;
+    align-items: center;
+  }
+
+  .num{
+    font-weight: 900;
+  }
+  #bottom{
+    flex-direction: column;
+  }
+
+  #bottom a {
+    align-self: flex-end;
+  }
