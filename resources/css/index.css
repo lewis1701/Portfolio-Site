@@ -2,7 +2,7 @@
    General Styles & Resets
    ========================================================================== */
 
-* {
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -57,16 +57,17 @@ h6 { /* Used for Card Titles */
 
 
 /* ==========================================================================
-   Header (#banner)
+   Header (#banner) - Base Styles (Desktop First)
    ========================================================================== */
 
 #banner {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
+    justify-content: space-between; /* Space items out */
+    align-items: center;           /* Vertically align items */
+    padding: 20px 10%;            /* Top/Bottom | Left/Right padding */
     border-bottom: 1px solid black;
-    /* overflow: hidden; */ /* Often not needed unless content breaks out */
+    flex-wrap: wrap; /* Allow wrapping if necessary, though ideally avoided */
+    gap: 20px;       /* Add a base gap for wrap scenarios */
 }
 
 #banner h3#site-title { /* More specific selector */
@@ -75,28 +76,36 @@ h6 { /* Used for Card Titles */
     letter-spacing: 2px;
     color: #666666;
     text-transform: uppercase;
+    flex-shrink: 0; /* Prevent title from shrinking excessively */
+    margin-right: auto; /* Push nav and buttons to the right */
 }
 
 #navlist {
     display: flex;
-    gap: 30px; /* Increased gap slightly */
+    align-items: center; /* Align nav items vertically */
+    gap: 30px;          /* Space between nav items */
     list-style: none;
+    padding: 0;         /* Remove default padding */
+    margin: 0;          /* Remove default margin */
+    flex-shrink: 0; /* Prevent nav from shrinking excessively */
 }
 
 #navlist li {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px; /* Consider slightly smaller size */
+    font-size: 22px; /* Slightly reduced base size */
     font-weight: 600;
     color: #666666;
-    /* margin-right: 5%; */ /* Replaced by gap on #navlist */
 }
 
 #navlist a { /* Target links directly for hover */
-     color: #666666;
+    color: #666666;
+    transition: color 0.2s ease, font-weight 0.2s ease; /* Smooth transitions */
+    display: block; /* Better hit area */
+    padding: 5px 0; /* Add slight vertical padding */
 }
 #navlist a:hover {
     color: black;
-    font-weight: 900; /* Applied on hover only */
+    font-weight: 900;
 }
 
 /* Social Buttons (in Header) */
@@ -105,51 +114,152 @@ h6 { /* Used for Card Titles */
     justify-content: center;
     align-items: center;
     list-style: none;
-    gap: 20px;
+    gap: 20px;         /* Space between buttons */
+    padding: 0;        /* Remove default padding */
+    margin: 0;         /* Remove default margin */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
-/* #mybuttons li: overflow: hidden; unnecessary here */
-
 #mybuttons button {
-    width: 50px; /* Slightly smaller? */
-    height: 50px;
+    width: 45px;       /* Slightly smaller base size */
+    height: 45px;
     border-radius: 50%;
     background-color: black;
-    display: flex; /* Keep for potential future icon centering */
-    justify-content: center; /* Keep for potential future icon centering */
-    align-items: center; /* Keep for potential future icon centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     cursor: pointer;
     padding: 0;
-    /* Font properties removed as they have no effect on bg-image buttons */
-    /* background-color is set here, remove from specific ID rules */
+    transition: transform 0.2s ease; /* Smooth hover effect */
+    /* background properties are set by IDs */
 }
 
 #mybuttons button:hover {
-    transform: scale(1.15); /* Slightly increased hover effect */
-    transition: transform 0.2s ease; /* Faster transition */
+    transform: scale(1.1); /* Slightly reduced hover scale */
 }
 
+/* Specific Button Backgrounds (Keep as is) */
 #github {
     background-image: url("../images/Github.png");
-    background-size: 60%; /* Adjusted size */
+    background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #linkedin {
     background-image: url("../images/linkedin.png");
-    background-size: 60%; /* Adjusted size */
+    background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #email{
     background-image: url("../images/mail.png");
-    background-size: 80%; /* Adjusted size */
+    background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+
+/* ==========================================================================
+   Responsive Adjustments for Header (Included Here)
+   ========================================================================== */
+
+/* Medium Screens / Tablets (e.g., <= 992px) */
+@media (max-width: 992px) {
+    #banner {
+        padding: 15px 8%; /* Reduce padding */
+    }
+    #navlist {
+        gap: 25px; /* Reduce nav gap */
+    }
+    #navlist li {
+        font-size: 20px; /* Reduce nav font size */
+    }
+    #mybuttons {
+        gap: 15px; /* Reduce button gap */
+    }
+    #mybuttons button {
+        width: 40px; /* Reduce button size */
+        height: 40px;
+    }
+}
+
+/* Smaller Tablets / Large Phones (e.g., <= 768px) */
+@media (max-width: 768px) {
+    #banner {
+        padding: 15px 5%;  /* Further reduce padding */
+        justify-content: center; /* Center items when they might wrap */
+        gap: 15px;         /* Adjust gap for potential wrapping */
+    }
+     #banner h3#site-title {
+        margin-right: 0; /* Remove auto margin to allow centering */
+        font-size: 22px; /* Slightly smaller title */
+    }
+    #navlist {
+        gap: 20px; /* Further reduce nav gap */
+        order: 1; /* Ensure nav comes after title if wrapping */
+        flex-grow: 1; /* Allow nav to take space if needed */
+        justify-content: center; /* Center nav items */
+    }
+    #navlist li {
+        font-size: 18px; /* Further reduce nav font size */
+    }
+    #mybuttons {
+        order: 2; /* Ensure buttons come after nav if wrapping */
+        justify-content: center; /* Center buttons */
+    }
+
+    /* If #banner wraps to two lines here, the above centering and order helps */
+    /* Consider a hamburger menu if this layout isn't sufficient */
+}
+
+/* Small Phones (e.g., <= 480px) - Stacked Layout */
+@media (max-width: 480px) {
+    #banner {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;    /* Center items horizontally */
+        padding: 20px 5%;       /* Adjust padding for stacked */
+        gap: 20px;              /* Vertical gap between items */
+    }
+
+    #banner h3#site-title {
+        font-size: 20px;     /* Adjust title size */
+        text-align: center; /* Ensure title is centered */
+        order: 0; /* Reset order */
+    }
+
+    #navlist {
+        flex-direction: row; /* Keep nav items horizontal for small lists */
+        /* Or uncomment below for vertical nav list */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        gap: 15px;          /* Adjust gap */
+        order: 1; /* Reset order */
+        flex-grow: 0; /* Reset grow */
+        justify-content: center;
+    }
+
+    #navlist li {
+        font-size: 16px;     /* Smallest nav font size */
+    }
+
+     #navlist a {
+        padding: 2px 0; /* Reduce padding */
+    }
+
+    #mybuttons {
+        gap: 15px; /* Adjust gap */
+        order: 2; /* Reset order */
+        /* Button size already reduced at 992px, could reduce further if needed */
+    }
+     #mybuttons button {
+       width: 35px; /* Further reduce button size */
+       height: 35px;
+     }
+}
+
 
 /* ==========================================================================
    Main Content Area Layout
@@ -505,7 +615,7 @@ h6 { /* Used for Card Titles */
 
 
 /* ==========================================================================
-   Responsive Adjustments
+   General Responsive Adjustments (Excluding Header - handled above)
    ========================================================================== */
 
 @media (max-width: 768px) {
@@ -515,7 +625,7 @@ h6 { /* Used for Card Titles */
     }
 
     h1 {
-        font-size: 48px; /* Smaller h1 on mobile */
+        font-size: 32px; /* Smaller h1 on mobile */
     }
 
     .main-content {
@@ -577,27 +687,13 @@ h6 { /* Used for Card Titles */
     }
 }
 
-/* Further adjustments for very small screens if needed */
+/* Further adjustments for very small screens if needed (Excluding Header) */
 @media (max-width: 480px) {
      h1 {
          font-size: 36px;
      }
-     #banner {
-         padding: 15px 5%;
-         flex-direction: column; /* Stack header items */
-         gap: 15px;
-     }
-     #navlist {
-         gap: 20px;
-         font-size: 18px; /* Smaller nav links */
-     }
-     #navlist li {
-         font-size: 18px;
-     }
-     #mybuttons button {
-         width: 40px;
-         height: 40px;
-     }
+    /* Header rules are handled in the dedicated header section */
+
      .main-content {
          padding: 30px 5% 50px;
      }
@@ -607,28 +703,35 @@ h6 { /* Used for Card Titles */
      }
 }
 
-/* Base state for both */   
+/* ==========================================================================
+   Scroll Animation
+   ========================================================================== */
+/* Base state for both */
 .scroll-animate {
     opacity: 0;
-    transform: translateX(0); 
+    transform: translateX(0);
     transition: all 1s ease-out;
   }
-  
+
   /* Left animation */
   .fade-in-left {
     transform: translateX(-250px);
   }
-  
+
   /* Right animation */
   .fade-in-right {
     transform: translateX(250px);
   }
-  
+
   /* Triggered when visible */
   .visible {
     opacity: 1;
     transform: translateX(0);
   }
+
+/* ==========================================================================
+   Footer / Contact
+   ========================================================================== */
 
   .footerbuttons{
     margin: 2em;
@@ -639,15 +742,35 @@ h6 { /* Used for Card Titles */
     flex-direction: column;
     background-color: #e0e0e0;
     align-items: center;
+    padding: 40px 5%; /* Add some padding */
   }
 
   .num{
     font-weight: 900;
   }
   #bottom{
-    flex-direction: column;
+    flex-direction: column; /* Already flex column via #contact */
+    display: flex; /* Ensure flex properties apply */
+    align-items: center; /* Center items */
+    text-align: center; /* Center text */
+    gap: 15px; /* Add gap between footer items */
+    width: 100%;
+    max-width: 600px; /* Limit width for readability */
+    margin-top: 20px; /* Space above bottom links */
   }
 
   #bottom a {
+<<<<<<< HEAD:resources/css/index.css
     align-self: flex-end;
   }
+=======
+    align-self: center; /* Override potential inherited align-self */
+    /* Add styles for footer links if needed */
+  }
+
+#about p span.highlight,
+#about p span.underline {
+    display: inline-block; /* Might stabilize geometry slightly */
+    /* position: static !important; */ /* Force static if position:relative was interfering, unlikely needed */
+}
+>>>>>>> 0292c52 (added more polish and replaced profile picture):resources/css/Index.css
