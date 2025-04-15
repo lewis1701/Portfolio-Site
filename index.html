@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lewis Daly - Portfolio</title> <link rel="stylesheet" href="./resources/css/index.css" />
+    <title>Lewis Daly - Portfolio</title>
+    <link rel="stylesheet" href="./resources/css/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&family=Inter:wght@900&display=swap" rel="stylesheet" />
@@ -17,117 +18,108 @@
         <nav aria-labelledby="site-title">
             <ul id="navlist">
                 <li><a href="#landing">About</a></li>
-                <li><a href="#card-1">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#project-head">Projects</a></li> <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>  
+        </nav>
         <ul id="mybuttons">
             <li>
-              <a href="https://www.linkedin.com/in/lewis-daly-48559b357/" target="_blank" aria-label="LinkedIn Profile">
-                <button id="linkedin"></button>
-              </a>
+                <a href="https://www.linkedin.com/in/lewis-daly-48559b357/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <button id="linkedin"></button>
+                </a>
             </li>
             <li>
-              <a href="https://github.com/lewis1701" target="_blank" aria-label="GitHub Profile">
-                <button id="github"></button>
-              </a>
+                <a href="https://github.com/lewis1701" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                    <button id="github"></button>
+                </a>
             </li>
             <li>
-              <a href="mailto:lewdaly@hotmail.com" aria-label="Email Me">
-                <button id="email"></button>
-              </a>
+                <a href="mailto:lewdaly@hotmail.com" aria-label="Email Me">
+                    <button id="email"></button>
+                </a>
             </li>
-          </ul>
+        </ul>
     </header>
 
-    <section class="main-content">
-
-        <div id="landing">
-            <div id="about">
+    <main class="main-content"> <section id="landing"> <div id="about">
                 <h1>Aspiring fullstack developer from bristol</h1>
-                <p>I'm <span class="highlight">passionate</span> about coding and <span class="highlight">continuously expanding</span> my skills in both <span class="underline">front-end</span> and <span class="underline">back-end</span> development.</p>
+                <p>I'm <span class="highlight">passionate</span> about coding and <span class="highlight">continuously expanding</span> my skills in both front-end and back-end development.</p>
                 <p>I'm a final-year student at the University of the West of England, with a growing passion for full-stack development. I'm currently completing the Full-Stack Engineer course on Codecademy, constantly building on my skills and exploring new technologies. I genuinely enjoy coding and take <span class="highlight">every opportunity to learn and improve.</span></p>
-                <button id="cv">Download CV</button>
+                <a href="https://drive.google.com/file/d/1S6ueLynzZmS2XdMTNQoqvX3kjvUHR1L-/view?usp=sharing" target="_blank" rel="noopener noreferrer"><button id="cv">Download CV</button></a>
             </div>
             <div id="photo">
-                <img src="resources/images/mock.png" alt="Photo of Lewis Daly" />
+                <img src="./resources/images/mock.png" alt="Photo of Lewis Daly" />
             </div>
-        </div>
-
-        <div class="head-section" id="project-head"> <div class="card-header">
-                <hr class="header-line">
-                <h5 class="header">Projects</h5>
+        </section> <section id="projects"> <div class="head-section" id="project-head">
+                <div class="card-header">
+                    <hr class="header-line">
+                    <h5 class="header">Projects</h5>
+                </div>
             </div>
-        </div>
 
-        <div class="cards">
-            <div id="card-1" class="card scroll-animate fade-in-left" >
-                <div id="card-1-about" class="card-about">
-                    <div class="card-about-header">
-                        <h6>Web Tracking Scanner</h6>
-                        <img src="./resources/images/privacylens.png" id="logo" alt="PrivacyLens logo"> </div>
-                    <p>Scans websites to detect tracker cookies.</p>
-                    <p>The Python version uses PyQt6, Selenium, and BeautifulSoup to automate real-time scans and display results in a simple desktop app.</p>
-                    <p class="project-link"><a href="https://github.com/lewis1701/Privacy-lens-technical-prototype" target="_blank" rel="noopener noreferrer">View Python Version →</a></p> <p>The high-fidelity version, built with HTML, CSS, and JavaScript, focuses on clean, interactive design to showcase how the tool could look and work in a browser.</p>
-                    <p class="project-link"><a href="https://lewis1701.github.io/Privacylens_prototype/Index.html" target="_blank" rel="noopener noreferrer">View Web Prototype →</a></p> <div class="technologies">
-                        <span class="technology">Python</span>
-                        <span class="technology">HTML</span>
-                        <span class="technology">CSS</span>
-                        <span class="technology">JavaScript</span>
+            <div class="cards">
+                <div id="card-1" class="card scroll-animate fade-in-left">
+                    <div id="card-1-about" class="card-about">
+                        <div class="card-about-header">
+                            <h6>Web Tracking Scanner</h6>
+                            <img src="./resources/images/privacylens.png" id="logo" alt="PrivacyLens logo">
+                        </div>
+                        <p>Scans websites to detect tracker cookies.</p>
+                        <p>The Python version uses PyQt6, Selenium, and BeautifulSoup to automate real-time scans and display results in a simple desktop app.</p>
+                        <p class="project-link"><a href="https://github.com/lewis1701/Privacy-lens-technical-prototype" target="_blank" rel="noopener noreferrer">View Python Version →</a></p>
+                        <p>The high-fidelity version, built with HTML, CSS, and JavaScript, focuses on clean, interactive design to showcase how the tool could look and work in a browser.</p>
+                        <p class="project-link"><a href="https://lewis1701.github.io/Privacylens_prototype/Index.html" target="_blank" rel="noopener noreferrer">View Web Prototype →</a></p>
+                        <div class="technologies">
+                            <span class="technology">Python</span>
+                            <span class="technology">HTML</span>
+                            <span class="technology">CSS</span>
+                            <span class="technology">JavaScript</span>
+                        </div>
+                    </div>
+                    <div id="card-1-photo" class="card-photo">
+                        <img src="./resources/images/project-1.png" class="project-photo" alt="Web Tracking Scanner Project Screenshot">
                     </div>
                 </div>
-                <div id="card-1-photo" class="card-photo">
-                    <img src="./resources/images/project-1.png" class="project-photo" alt="Web Tracking Scanner Project Screenshot"> </div>
-            </div>
 
-            <div id="card-2" class="card scroll-animate fade-in-right">
-                <div id="card-2-about" class="card-about">
-                     <div class="card-about-header">
-                         <h6>PrivacyLens</h6>
-                         </div>
-                     <p>Scans websites to detect tracker cookies.</p>
-                     <p>The Python version uses PyQt6, Selenium, and BeautifulSoup to automate real-time scans and display results in a simple desktop app.</p>
-                     <p class="project-link"><a href="https://github.com/lewis1701/Privacy-lens-technical-prototype" target="_blank" rel="noopener noreferrer">View Python Version →</a></p>
-                     <p>The high-fidelity version, built with HTML, CSS, and JavaScript, focuses on clean, interactive design to showcase how the tool could look and work in a browser.</p>
-                     <p class="project-link"><a href="https://lewis1701.github.io/Privacylens_prototype/Index.html" target="_blank" rel="noopener noreferrer">View Web Prototype →</a></p>
-                     <div class="technologies">
-                         <span class="technology">Python</span>
-                         <span class="technology">HTML</span>
-                         <span class="technology">CSS</span>
-                         <span class="technology">JavaScript</span>
-                     </div>
+                <div id="card-2" class="card scroll-animate fade-in-right">
+                    <div id="card-2-about" class="card-about">
+                        <div class="card-about-header">
+                            <h6>Project #2</h6>
+                        </div>
+                        <p>This is a placeholder i will add a project here soon</p>
+                        <div class="technologies">
+                            <span class="technology">Tech</span>
+                            <span class="technology">Stack</span>
+                            <span class="technology">TBC</span>
+                        </div>
+                    </div>
+                    <div id="card-2-photo" class="card-photo">
+                        <img src="./resources/images/placeholder.png" class="project-photo" alt="Placeholder for Project 2">
+                    </div>
                 </div>
-                <div id="card-2-photo" class="card-photo">
-                    <img src="./resources/images/project-1.png" class="project-photo" alt="PrivacyLens Project Screenshot"> </div>
-            </div>
 
-            <div id="card-3" class="card scroll-animate fade-in-left">
-                 <div id="card-3-about" class="card-about">
-                     <div class="card-about-header">
-                         <h6>PrivacyLens</h6>
-                         </div>
-                     <p>Scans websites to detect tracker cookies.</p>
-                     <p>The Python version uses PyQt6, Selenium, and BeautifulSoup to automate real-time scans and display results in a simple desktop app.</p>
-                     <p class="project-link"><a href="https://github.com/lewis1701/Privacy-lens-technical-prototype" target="_blank" rel="noopener noreferrer">View Python Version →</a></p>
-                     <p>The high-fidelity version, built with HTML, CSS, and JavaScript, focuses on clean, interactive design to showcase how the tool could look and work in a browser.</p>
-                     <p class="project-link"><a href="https://lewis1701.github.io/Privacylens_prototype/Index.html" target="_blank" rel="noopener noreferrer">View Web Prototype →</a></p>
-                     <div class="technologies">
-                         <span class="technology">Python</span>
-                         <span class="technology">HTML</span>
-                         <span class="technology">CSS</span>
-                         <span class="technology">JavaScript</span>
-                     </div>
-                 </div>
-                 <div id="card-3-photo" class="card-photo">
-                     <img src="./resources/images/project-1.png" class="project-photo" alt="PrivacyLens Project Screenshot"> </div>
+                <div id="card-3" class="card scroll-animate fade-in-left">
+                    <div id="card-3-about" class="card-about">
+                        <div class="card-about-header">
+                            <h6>Project #3</h6>
+                        </div>
+                        <p>This is a placeholder i will add a project here soon</p>
+                         <div class="technologies">
+                            <span class="technology">Tech</span>
+                            <span class="technology">Stack</span>
+                            <span class="technology">TBC</span>
+                        </div>
+                    </div>
+                    <div id="card-3-photo" class="card-photo">
+                        <img src="./resources/images/placeholder.png" class="project-photo" alt="Placeholder for Project 3">
+                    </div>
+                </div>
+            </div> </section> <section id="education-courses">
+            <div class="head-section" id="education-head">
+                <div class="card-header">
+                    <hr class="header-line">
+                    <h5 class="header">Education & Courses</h5>
+                </div>
             </div>
-        </div> <div class="head-section" id="education-head"> <div class="card-header">
-                <hr class="header-line">
-                <h5 class="header">Education & Courses</h5>
-            </div>
-        </div>
-
-        <section id="education-courses">
             <div class="edu-courses-container">
                 <div class="education-column info-column">
                     <h3>Education</h3>
@@ -135,32 +127,37 @@
                         <h4>BSc (Hons) Information Technology (Top-up)</h4>
                         <p class="institution">University of the West of England (UWE)</p>
                         <p class="dates">Sept 2024 - May 2025 (Currently Studying)</p>
-                        <p class="grade">Expected Grade: First Class</p> <p class="description">Currently completing the final year, building upon prior qualifications with advanced degree-level modules and project work.</p>
+                        <p class="grade">Expected Grade: First Class</p>
+                        <p class="description">Currently completing the final year, building upon prior qualifications with advanced degree-level modules and project work.</p>
                     </div>
                     <div class="qualification">
                         <h4>Level 5 HND in Computing</h4>
                         <p class="institution">City of Bristol College</p>
                         <p class="dates">Sept 2023 - July 2024</p>
-                        <p class="grade">Grade: Distinction</p> <p class="description">Further Developed skills learned in the HNC.</p>
+                        <p class="grade">Grade: Distinction</p>
+                        <p class="description">Further Developed skills learned in the HNC.</p>
                     </div>
                     <div class="qualification">
                         <h4>Level 4 HNC in Computing</h4>
                         <p class="institution">City of Bristol College</p>
                         <p class="dates">Sept 2022 - July 2023</p>
-                        <p class="grade">Grade: Distinction</p> <p class="description">Developed skills through modules including Programming, Networking, Database Design, Security, Project Management, and Systems Analysis & Design.</p>
+                        <p class="grade">Grade: Distinction</p>
+                        <p class="description">Developed skills through modules including Programming, Networking, Database Design, Security, Project Management, and Systems Analysis & Design.</p>
                     </div>
                     <div class="qualification">
                         <h4>Level 3 Diploma in ICT Systems and Principles</h4>
                         <p class="institution">City of Bristol College</p>
                         <p class="dates">Sept 2021 - July 2022</p>
-                        <p class="grade">Grade: Distinction</p> </div>
+                        <p class="grade">Grade: Distinction</p>
+                    </div>
                 </div> <div class="courses-column info-column">
                     <h3>Courses</h3>
                     <div class="course">
                         <h4>Fullstack Engineer Career Path</h4>
                         <p class="provider">Codecademy</p>
                         <p class="status">Status: Currently Studying</p>
-                        <div class="technologies"> <span class="technology">HTML</span>
+                        <div class="technologies">
+                            <span class="technology">HTML</span>
                             <span class="technology">CSS</span>
                             <span class="technology">JavaScript (ES6+)</span>
                             <span class="technology">Responsive Design</span>
@@ -176,13 +173,14 @@
                             <span class="technology">Authentication</span>
                             <span class="technology">Full-Stack Projects</span>
                             <span class="technology">Deployment</span>
-                         </div>
+                        </div>
                     </div>
                     <div class="course">
                         <h4>Python Course</h4>
                         <p class="provider">Codecademy</p>
                         <p class="status">Status: Completed</p>
-                        <div class="technologies"> <span class="technology">Python Basics</span>
+                        <div class="technologies">
+                            <span class="technology">Python Basics</span>
                             <span class="technology">Data Types & Variables</span>
                             <span class="technology">Control Flow</span>
                             <span class="technology">Functions</span>
@@ -194,28 +192,27 @@
                             <span class="technology">Intro to Data Analysis</span>
                         </div>
                     </div>
-                </div> </div> </section> </section> 
-                <footer id="contact">
-                    <ul id="mybuttons" class="footerbuttons">
-                        <li>
-                          <a href="https://www.linkedin.com/in/lewis-daly-48559b357/" target="_blank" aria-label="LinkedIn Profile">
-                            <button id="linkedin"></button>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="https://github.com/lewis1701" target="_blank" aria-label="GitHub Profile">
-                            <button id="github"></button>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="mailto:lewdaly@hotmail.com" aria-label="Email Me">
-                            <button id="email"></button>
-                          </a>
-                        </li>
-                      </ul>
-                      <div id="bottom"></div>
-                        <h6>+44 7305 916 714</h6> 
-                        <a href="#landing">Back To Top ↑</a>
-                </footer>
-            </body>
+                </div> </div> </section> </main> <footer id="contact">
+        <ul id="mybuttons" class="footerbuttons"> <li>
+                <a href="https://www.linkedin.com/in/lewis-daly-48559b357/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <button id="linkedin"></button>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/lewis1701" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                    <button id="github"></button>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:lewdaly@hotmail.com" aria-label="Email Me">
+                    <button id="email"></button>
+                </a>
+            </li>
+        </ul>
+        <div id="bottom"> <h6>+44 7305 916 714</h6>
+             <a href="#landing">Back To Top ↑</a>
+             </div>
+    </footer>
+
+</body>
 </html>

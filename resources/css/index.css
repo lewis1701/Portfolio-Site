@@ -441,6 +441,7 @@ h6 { /* Used for Card Titles */
     width: 100%;
     max-width: 100%;
     height: auto;
+    max-height: 100%;
     display: block;
     /* border-radius: 4px; */ /* Remove inner radius if card has overflow:hidden */
 }
@@ -760,17 +761,15 @@ h6 { /* Used for Card Titles */
   }
 
   #bottom a {
-<<<<<<< HEAD:resources/css/index.css
     align-self: flex-end;
   }
-=======
-    align-self: center; /* Override potential inherited align-self */
+
+ /* Override potential inherited align-self */
     /* Add styles for footer links if needed */
-  }
 
 #about p span.highlight,
 #about p span.underline {
     display: inline-block; /* Might stabilize geometry slightly */
     /* position: static !important; */ /* Force static if position:relative was interfering, unlikely needed */
 }
->>>>>>> 0292c52 (added more polish and rep laced profile picture):resources/css/Index.css
+
