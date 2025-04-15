@@ -38,3 +38,4 @@ function observeAndAnnotate(selector, type, color = 'yellow') {
 // Apply to .highlight and .underline classes
 observeAndAnnotate('.highlight', 'highlight', 'yellow');
 observeAndAnnotate('.underline', 'underline', 'blue');
+
