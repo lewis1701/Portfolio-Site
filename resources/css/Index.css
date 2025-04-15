@@ -1,3 +1,7 @@
+/* ==========================================================================
+   General Styles & Resets
+   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,21 +10,66 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    color: #333; /* Default text color */
+    line-height: 1.6; /* Default line height */
 }
 
-/* Header */
+/* Links */
+a {
+    text-decoration: none;
+    color: #666666; /* Default link color */
+    transition: color 0.2s ease; /* Smooth color transition on hover */
+}
+
+a:hover {
+    color: black;
+    /* Consider adding text-decoration: underline; here */
+}
+
+/* Headings - Base styling (can be overridden) */
+h1, h3, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Common font for headings */
+    font-weight: 600; /* Default heading weight */
+    color: #111; /* Default heading color */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif; /* Specific font for h1 */
+    font-size: 64px; /* Consider using clamp() or relative units for responsiveness */
+    font-weight: 900;
+    text-transform: capitalize;
+    line-height: 1.2;
+}
+
+h5 { /* Used for Section Headers */
+    font-size: 2em;
+    padding-left: 1em; /* Space after the hr */
+    text-transform: uppercase;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+h6 { /* Used for Card Titles */
+    font-size: 1.5em;
+    margin-bottom: 0.5em; /* Add some space below card titles */
+}
+
+
+/* ==========================================================================
+   Header (#banner)
+   ========================================================================== */
+
 #banner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 10%;
-    color: #666666;
     border-bottom: 1px solid black;
-    overflow: hidden;
+    /* overflow: hidden; */ /* Often not needed unless content breaks out */
 }
 
-#banner h3 {
-    font-family: 'Montserrat', sans-serif;
+#banner h3#site-title { /* More specific selector */
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -30,87 +79,27 @@ body {
 
 #navlist {
     display: flex;
-    gap: 20px;
+    gap: 30px; /* Increased gap slightly */
     list-style: none;
 }
-a:hover{
-    color: black;
-    font-weight: 900;
-}
+
 #navlist li {
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: 24px; /* Consider slightly smaller size */
     font-weight: 600;
     color: #666666;
-    margin-right: 5%;
+    /* margin-right: 5%; */ /* Replaced by gap on #navlist */
 }
 
-/* Main Content */
-.main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 10%;
-    gap: 40px;
-    flex-direction: column;
+#navlist a { /* Target links directly for hover */
+     color: #666666;
+}
+#navlist a:hover {
+    color: black;
+    font-weight: 900; /* Applied on hover only */
 }
 
-#landing {
-    display: flex;
-    justify-content: center;
-}
-
-#about {
-    flex: 0.75;
-}
-
-#about p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    color: #666666;
-    line-height: 1.4;
-    margin-bottom: 20px;
-}
-
-h1 {
-    margin-bottom: 20px;
-    font-family: 'Inter', sans-serif;
-    font-size: 64px;
-    font-weight: 900;
-    color: #111;
-    text-transform: capitalize;
-}
-
-#cv {
-    background-color: black;
-    color: white;
-    font-weight: 600;
-    width: 9em;
-    height: 4em;
-    border-radius: 10%;
-    font-size: 1.1em;
-}
-#cv:hover{
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-
-/* Image */
-#photo {
-    width: fit-content;
-    height: auto;
-    position: relative;
-    left: 2em;
-}
-
-#photo img {
-    width: 18em;
-    height: 24em;
-    border-radius: 25%;
-}
-
-/* Social Buttons */
+/* Social Buttons (in Header) */
 #mybuttons {
     display: flex;
     justify-content: center;
@@ -119,156 +108,524 @@ h1 {
     gap: 20px;
 }
 
-#mybuttons li {
-    list-style: none;
-    overflow: hidden;
-}
+/* #mybuttons li: overflow: hidden; unnecessary here */
 
 #mybuttons button {
-    width: 55px;
-    height: 55px;
+    width: 50px; /* Slightly smaller? */
+    height: 50px;
     border-radius: 50%;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: white;
     background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Keep for potential future icon centering */
+    justify-content: center; /* Keep for potential future icon centering */
+    align-items: center; /* Keep for potential future icon centering */
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    /* Font properties removed as they have no effect on bg-image buttons */
+    /* background-color is set here, remove from specific ID rules */
 }
-#mybuttons button:hover{
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
-}  
+
+#mybuttons button:hover {
+    transform: scale(1.15); /* Slightly increased hover effect */
+    transition: transform 0.2s ease; /* Faster transition */
+}
 
 #github {
     background-image: url("../images/Github.png");
-    background-size: 65%;
+    background-size: 60%; /* Adjusted size */
     background-position: center;
     background-repeat: no-repeat;
-    background-color: black;
 }
 
 #linkedin {
     background-image: url("../images/linkedin.png");
-    background-size: 65%;
+    background-size: 60%; /* Adjusted size */
     background-position: center;
     background-repeat: no-repeat;
-    background-color: black;
 }
 
-/* Links */
-a {
-    text-decoration: none;
+#email{
+    background-image: url("../images/mail.png");
+    background-size: 80%; /* Adjusted size */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ==========================================================================
+   Main Content Area Layout
+   ========================================================================== */
+
+.main-content {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 60px 10% 80px; /* Adjusted padding: T R B L */
+    gap: 60px; /* Vertical gap between direct children sections */
+}
+
+
+/* ==========================================================================
+   Landing Section (#landing)
+   ========================================================================== */
+
+#landing {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 40px; /* Space between text and photo */
+    width: 100%;
+    max-width: 1200px; /* Consistent max width */
+}
+
+#about {
+    /*flex: 1; /* Allow text block to grow */
+    min-width: 300px; /* Prevent getting too narrow */
+    /*max-width: 650px; /* Limit text width */
+    width: 600px;
+}
+
+#about p {
+    font-size: 1.1em; /* Relative font size */
+    font-weight: 400;
     color: #666666;
+    line-height: 1.7; /* Improved line height */
+    margin-bottom: 1.5em; /* Spacing using em */
 }
 
-.card-head-section{
-    width: 60%;
-    padding-top: 15em;
-    position: absolute;
-    bottom: 4em;
-    left: 1.7em;
+#cv {
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    width: auto; /* Let padding determine width */
+    padding: 0.8em 1.5em; /* Use padding for sizing */
+    height: auto; /* Let padding determine height */
+    border-radius: 8px; /* Slightly less rounded */
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    margin-top: 1em; /* Space above button */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Added shadow transition */
 }
-.header-line{
-    width: 9%;
-    padding-right: 4em;
-    font-weight: 900;   
+
+#cv:hover {
+    transform: scale(1.05); /* Slightly more subtle scale */
+    box-shadow: 0 4px 15px rgba(0,0,0, 0.2); /* Add shadow on hover */
+}
+
+/* Landing Image */
+#photo {
+    /* Removed position: relative; left: 2em; - handled by flex gap */
+    width: fit-content; /* Keeps div sized to image */
+    height: auto;
+    flex-shrink: 0; /* Prevent image from shrinking too much */
+}
+
+#photo img {
+    width: 18em;
+    height: auto; /* Maintain aspect ratio */
+    aspect-ratio: 3 / 4; /* Define aspect ratio */
+    object-fit: cover; /* Ensure image covers the area */
+    border-radius: 15px; /* Softer rounding */
+    display: block; /* Remove extra space below image */
+    box-shadow: 0 5px 20px rgba(0,0,0, 0.1); /* Subtle shadow */
+}
+
+
+/* ==========================================================================
+   Section Headers (.head-section)
+   ========================================================================== */
+
+.head-section {
+    /* Removed all absolute/relative positioning hacks */
+    width: 100%;
+    max-width: 1200px; /* Match other content width */
+    margin-top: 40px; /* Space above header */
+    margin-bottom: 40px; /* Space below header */
+    /* padding-top removed, padding should be on .main-content or section */
+}
+
+.card-header { /* Container for hr and h5 */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the line and title */
+    width: 100%;
+    /* padding-left removed, use justify-content */
+}
+
+.header-line {
+    /* font-weight removed - no effect on hr */
     background-color: black;
     border: none;
-    height: 5px;
-}
-.card-header{
-    display: flex;
-    align-items: center;    
-    padding-left: 10.5em;
-}
-h5{
-    font-size: 2em;
-    padding-left: 1em;
-    text-transform: uppercase;
-    font-weight: 900;
+    height: 4px; /* Slightly thinner */
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 60px; /* Fixed width */
+    margin-right: 1em; /* Space between line and text */
 }
 
-.card{
-    width: 90%;
-    justify-content: center;
-    display: flex;
-    margin-top: 15em;
 
+/* ==========================================================================
+   Projects Section (.cards)
+   ========================================================================== */
+
+.cards {
+    display: flex;
+    flex-direction: column; /* Stack cards */
+    align-items: center; /* Center cards horizontally */
+    /* flex-wrap: wrap; */ /* Redundant for column direction */
+    gap: 60px; /* Space between cards */
+    width: 100%;
+    max-width: 1200px; /* Consistent max width */
 }
 
-.card-about{
-    width: 25%;
+.card {
+    width: 100%; /* Card takes full width within .cards container */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2em;
+    flex-wrap: wrap; /* Allow text/image to wrap if needed */
     background-color: #F5F5F5;
-
+    border-radius: 10px; /* Consistent rounding */
+    overflow: hidden; /* Ensure content respects border radius */
+    box-shadow: 0 5px 15px rgba(0,0,0, 0.07); /* Subtle shadow */
 }
 
-.card-photo{
-        width:60%;
-        padding: 2em;
-        background-color: #F5F5F5;
+/* Alternating layout for card content */
+#card-2 { /* Applies to the card container */
+    /* Reversing the container itself doesn't work as intended here */
+    /* Instead, we handle this inside if needed, or apply specific margins */
 }
-.project-photo{
-    width: 100%;
-}
-.cards{
+#card-2 .card-about { order: 2; } /* Example: Push text to the right visually */
+#card-2 .card-photo { order: 1; } /* Example: Push photo to the left visually */
+/* NOTE: This simple order change might need flex-basis adjustments */
+/* Or, use different margin/padding on odd/even cards for visual shift */
+
+/* Remove ineffective align-self from card IDs */
+/* #card-1 { align-self: flex-start; } */
+/* #card-2 { align-self: flex-end; } */
+/* #card-3 { align-self: flex-start; } */
+
+
+.card-about {
+    flex: 1; /* Allow text section to grow */
+    min-width: 300px; /* Minimum width */
+    flex-basis: 35%; /* Suggested basis */
     display: flex;
     flex-direction: column;
+    /* align-items: center; */ /* Let text align normally */
+    padding: 2em 2.5em; /* More horizontal padding */
+    /* background-color removed, applied to .card */
+}
+
+.card-photo {
+    flex: 1; /* Allow photo section to grow */
+    min-width: 300px;
+    flex-basis: 65%; /* Suggested basis */
+    padding: 1em; /* Reduced padding around image */
+    /* background-color removed, applied to .card */
+    display: flex;
     align-items: center;
-    flex-wrap: wrap;
-}
-#card-1{
-    align-self: flex-start;
-}
-#card-2{
-    align-self: flex-end;
-}
-#card-3{
-    align-self: flex-start;
+    justify-content: center;
 }
 
-h6{
-    font-size: 1.5em;
+.project-photo {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* border-radius: 4px; */ /* Remove inner radius if card has overflow:hidden */
 }
 
-.card-about-header{
+.card-about-header {
     display: flex;
     width: 100%;
-    justify-content: center;
+    /* justify-content: center; */ /* Align header content left */
+    align-items: center; /* Vertically align title and logo */
+    margin-bottom: 1em;
 }
 
 #logo {
-    height: 35px;     
-    width: 35px;        
-    object-fit: contain; 
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
     margin-left: 10px;
-    display: block;
-}
-.technologies{
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 2em;
+    display: block; /* Keep */
+    flex-shrink: 0; /* Prevent logo shrinking */
 }
 
-.technology{
-    background-color: rgba(255, 0, 0, 0.1); /* light red/pinkish background */
-    color: #ff1a1a; /* strong red text */
-    padding: 6px 12px;
-    border-radius: 999px; /* fully rounded pill shape */
-    font-weight: 600;
-    font-size: 14px;
-    display: inline-block;
+/* Project Card Paragraph/Link Spacing & Styling */
+.card-about p {
+    margin-bottom: 1em;
+    line-height: 1.6;
 }
-
-.card-about a{
-    background-color:#d3d3d3;
+.card-about p:last-of-type { /* Space before technologies */
+     margin-bottom: 1.5em;
+}
+.card-about .project-link { /* Targets the <p> wrapping the link */
+    margin-top: -0.5em;
+    margin-bottom: 1.5em;
+}
+.card-about .project-link a {
     font-weight: 600;
+    color: #333;
+    /* Link background color removed - usually not needed */
+    /* background-color:#d3d3d3; */
+    padding: 2px 0; /* Add tiny vertical space if needed */
+    border-bottom: 1px solid #aaa; /* Underline effect */
+}
+.card-about .project-link a:hover {
     color: black;
+    border-bottom-color: black;
 }
 
+/* Technologies Tags (Shared) */
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto; /* Push tags to bottom if card-about uses flex */
+    padding-top: 15px; /* Space above tags */
+    border-top: 1px solid #eeeeee; /* Separator line */
+}
+
+.technology {
+    display: inline-block;
+    background-color: #e0e0e0; /* Neutral grey background */
+    color: #333; /* Dark grey text */
+    padding: 5px 12px;
+    border-radius: 15px; /* Pill shape */
+    font-size: 0.8em; /* Smaller font */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+    text-transform: uppercase; /* Added */
+    letter-spacing: 0.5px; /* Added */
+}
+
+
+/* ==========================================================================
+   Education & Courses Section (#education-courses)
+   ========================================================================== */
+
+#education-courses {
+    /* Combined rules - use padding defined in .main-content or add specific padding here */
+    /* padding: 80px 10%; */ /* Already handled by main-content */
+    width: 100%; /* Take full width within main-content */
+    max-width: 1400px; /* Wider max width for two columns */
+}
+
+.edu-courses-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 100%;
+    /* max-width removed, handled by parent #education-courses */
+    /* margin: 0 auto; */ /* Centering handled by parent .main-content */
+}
+
+.info-column {
+    flex: 1; /* Grow equally */
+    min-width: 300px;
+    max-width: 600px;
+    /* Optional background/padding if desired */
+    /* background-color: #ffffff; */
+    padding: 15px; /* Added some internal padding */
+    /* border: 1px solid #eee; */ /* Corrected syntax, uncomment if needed */
+    border-radius: 8px;
+}
+
+.info-column h3 { /* Education / Courses headings */
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8em;
+    font-weight: 900;
+    color: #111;
+    margin-bottom: 35px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.qualification,
+.course {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+.qualification:last-child,
+.course:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Grouped selectors for shared styles */
+.qualification h4,
+.course h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.institution,
+.provider,
+.dates,
+.grade,
+.status {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: #666666;
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+.description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: #444;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.grade { /* Specific style for grade */
+     font-weight: 600;
+     color: #333;
+}
+
+.status,
+.dates {
+    font-style: italic;
+}
+
+/* Removed duplicate/conflicting #education-courses styles */
+/* Removed unused .education / .education-box styles */
+/* Removed unused .section-wrapper, .column, .info-list styles */
+/* Removed unused .course ul / li styles (using .technologies spans instead) */
+
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    body {
+        /* Consider reducing base font size slightly on mobile */
+        /* font-size: 15px; */
+    }
+
+    h1 {
+        font-size: 48px; /* Smaller h1 on mobile */
+    }
+
+    .main-content {
+        padding: 40px 5% 60px; /* Reduced padding on mobile */
+        gap: 40px;
+    }
+
+    #landing {
+        gap: 30px;
+    }
+
+    #about p {
+        font-size: 1em; /* Adjust paragraph size */
+    }
+
+    #photo img {
+        width: 15em; /* Slightly smaller image */
+    }
+
+    .head-section {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .cards {
+        gap: 40px;
+    }
+
+    .card {
+        flex-direction: column; /* Stack image above/below text in card */
+    }
+     #card-2 .card-about { order: initial; } /* Reset order */
+     #card-2 .card-photo { order: initial; } /* Reset order */
+
+
+    .card-about, .card-photo {
+        flex-basis: auto; /* Reset basis */
+        padding: 1.5em; /* Adjust padding */
+    }
+
+    .card-photo {
+        padding-top: 0; /* Remove top padding if image is below text */
+    }
+
+
+    /* Education/Courses Responsive */
+    /* Stacking is already handled by flex-wrap on .edu-courses-container */
+    .edu-courses-container {
+        gap: 30px;
+    }
+
+    .info-column {
+        padding: 20px;
+    }
+
+    .info-column h3 {
+        font-size: 1.6em;
+        margin-bottom: 25px;
+    }
+}
+
+/* Further adjustments for very small screens if needed */
+@media (max-width: 480px) {
+     h1 {
+         font-size: 36px;
+     }
+     #banner {
+         padding: 15px 5%;
+         flex-direction: column; /* Stack header items */
+         gap: 15px;
+     }
+     #navlist {
+         gap: 20px;
+         font-size: 18px; /* Smaller nav links */
+     }
+     #navlist li {
+         font-size: 18px;
+     }
+     #mybuttons button {
+         width: 40px;
+         height: 40px;
+     }
+     .main-content {
+         padding: 30px 5% 50px;
+     }
+     .technology {
+        font-size: 0.75em;
+        padding: 4px 8px;
+     }
+}
+
+/* Base state for both */   
+.scroll-animate {
+    opacity: 0;
+    transform: translateX(0); 
+    transition: all 1s ease-out;
+  }
+  
+  /* Left animation */
+  .fade-in-left {
+    transform: translateX(-250px);
+  }
+  
+  /* Right animation */
+  .fade-in-right {
+    transform: translateX(250px);
+  }
+  
+  /* Triggered when visible */
+  .visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
